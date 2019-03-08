@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:onews_flutter/pages/index_page.dart';
+import 'package:onewflutter/pages/index_page.dart';
 
 class SplashPage extends StatefulWidget {
   _SplashPageState createState() => _SplashPageState();

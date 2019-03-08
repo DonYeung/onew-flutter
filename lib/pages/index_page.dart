@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:onews_flutter/api/apiservice.dart';
-import 'package:onews_flutter/pages/cart_page.dart';
-import 'package:onews_flutter/pages/category_page.dart';
-import 'package:onews_flutter/pages/home_page.dart';
-import 'package:onews_flutter/pages/member_page.dart';
+import 'package:onewflutter/api/apiservice.dart';
+import 'package:onewflutter/pages/cart_page.dart';
+import 'package:onewflutter/pages/category_page.dart';
+import 'package:onewflutter/pages/home_page.dart';
+import 'package:onewflutter/pages/member_page.dart';
 
 class IndexPage extends StatefulWidget{
   _IndexPageState createState() => _IndexPageState();
@@ -56,8 +56,7 @@ class _IndexPageState extends State<IndexPage>{
     // TODO: implement initState
     currentPage=tabBodies[currentIndex];
 
-    ApiService apiService = new ApiService();
-    apiService.getBannerMsgData();
+
     super.initState();
   }
 

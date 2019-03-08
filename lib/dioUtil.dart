@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:onewflutter/config/httpHeaders.dart';
 
 class DioUtil {
   static DioUtil _instance; //豆瓣
@@ -22,9 +23,10 @@ class DioUtil {
     var baseUrl;
     baseUrl = 'http://www.wanandroid.com/';
     BaseOptions options = new BaseOptions(
-      baseUrl: "https://www.xx.com/api",
+      baseUrl: baseUrl,
       connectTimeout: 5000,
       receiveTimeout: 3000,
+//      headers: httpHeaders,
     );
     dio = new Dio(options);
     cancelToken = CancelToken();
@@ -46,10 +48,7 @@ class DioUtil {
         print('get请求发生错误:' + e.toString());
       }
     }
-    print('get请求'+response.data);
-    print('get请求'+response.headers.toString());
-    print('get请求'+response.request.toString());
-    print('get请求'+response.statusCode.toString());
+//    print('get请求headers:::'+response.headers.toString());
     return response.data;
   }
 
