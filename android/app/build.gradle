@@ -25,7 +25,7 @@ apply plugin: 'com.android.application'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
 
     lintOptions {
         disable 'InvalidPackage'
@@ -35,10 +35,16 @@ android {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.drcom.onewflutter"
         minSdkVersion 16
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+//        ndk {
+//            abiFilters "armeabi", "armeabi-v7a"
+//            // 如果您使⽤的是商业版，只能使⽤ armeabi 架构，即：
+//            // abiFilters "armeabi",
+//        }
     }
 
     buildTypes {
@@ -47,6 +53,14 @@ android {
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
         }
+    }
+//    repositories {
+//        flatDir {
+//            dirs 'libs'
+//        }
+//    }
+    lintOptions {
+        abortOnError false
     }
 }
 

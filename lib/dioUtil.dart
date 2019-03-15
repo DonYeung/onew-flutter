@@ -24,8 +24,8 @@ class DioUtil {
     baseUrl = 'http://www.wanandroid.com/';
     BaseOptions options = new BaseOptions(
       baseUrl: baseUrl,
-      connectTimeout: 5000,
-      receiveTimeout: 3000,
+      connectTimeout: 10000,
+      receiveTimeout: 5000,
 //      headers: httpHeaders,
     );
     dio = new Dio(options);
@@ -49,7 +49,7 @@ class DioUtil {
       }
     }
 //    print('get请求headers:::'+response.headers.toString());
-    return response.data;
+    return response;
   }
 
   post(url, data) async {
@@ -64,7 +64,7 @@ class DioUtil {
         print('post请求发生错误：' + e.toString());
       }
     }
-    return response.data;
+    return response;
   }
 
   download(urlPath, savePath) {

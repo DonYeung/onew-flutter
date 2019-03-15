@@ -30,12 +30,11 @@ class Constant{
 
 
   /// 体系数据 http://www.wanandroid.com/tree/json
-  static const String TREE = "tree";
+  static const String TREE = "tree/json";
 
 
   /// 获取公众号列表 http://wanandroid.com/wxarticle/chapters/json
   static const String WXARTICLE_CHAPTERS = "wxarticle/chapters";
-
 
 
   /// 查看某个公众号历史数据 http://wanandroid.com/wxarticle/list/405/1/json
@@ -44,11 +43,28 @@ class Constant{
 
 
 
+  //收藏文章列表
+  static const   String COLLECT_LIST = "lg/collect/list/";
+  //搜索
+  static const   String ARTICLE_QUERY = "article/query/";
+  //收藏,取消收藏
+  static const   String COLLECT = "lg/collect/";
+  static const   String UN_COLLECT_ORIGIN = "lg/uncollect_originId/";
+  //我的收藏列表中取消收藏
+  static const   String UN_COLLECT_LIST = "lg/uncollect/";
+  //常用网站
+  static const   String FRIEND = "friend/json";
+  //搜索热词
+  static const   String HOT = "hotkey/json";
+
+
   static const String USER_REGISTER = "user/register"; //注册
 
   static const String USER_LOGIN = "user/login"; //登录
 
   static const String USER_LOGOUT = "user/logout"; //退出
+
+
 
   static String getPath({String path: '', int page, String resType: 'json'}) {
     StringBuffer sb = new StringBuffer(path);

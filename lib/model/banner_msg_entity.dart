@@ -1,3 +1,8 @@
+/**
+ *首页banner
+ * http://www.wanandroid.com/banner/json
+ */
+
 class BannerMsgEntity {
 	List<BannerMsgData> data;
 	int errorcode;

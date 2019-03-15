@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onewflutter/api/apiservice.dart';
-import 'package:onewflutter/pages/cart_page.dart';
-import 'package:onewflutter/pages/category_page.dart';
+import 'package:onewflutter/pages/explore_page.dart';
+import 'package:onewflutter/pages/video_page.dart';
+import 'package:onewflutter/pages/webview_page.dart';
 import 'package:onewflutter/pages/home_page.dart';
 import 'package:onewflutter/pages/member_page.dart';
 
@@ -17,7 +18,15 @@ class _IndexPageState extends State<IndexPage>{
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(title: Text('ONews_Flutter')),
-      body: currentPage,
+      body: IndexedStack(
+        index: currentIndex,
+        children: <Widget>[
+          HomePage(),
+          ExplorePage(),
+          VideoPage(),
+          MemberPage()
+        ],
+      ),
       backgroundColor: Color.fromRGBO(244, 245, 245,1.0),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -38,14 +47,14 @@ class _IndexPageState extends State<IndexPage>{
 
   final List<BottomNavigationBarItem> bottomTabs =[
     BottomNavigationBarItem(icon: Icon(CupertinoIcons.home),title: Text('首页')),
-    BottomNavigationBarItem(icon: Icon(CupertinoIcons.search),title: Text('分类')),
-    BottomNavigationBarItem(icon: Icon(CupertinoIcons.shopping_cart),title: Text('购物车')),
+    BottomNavigationBarItem(icon: Icon(CupertinoIcons.search),title: Text('探索')),
+    BottomNavigationBarItem(icon: Icon(CupertinoIcons.shopping_cart),title: Text('视频')),
     BottomNavigationBarItem(icon: Icon(CupertinoIcons.profile_circled),title: Text('会员中心')),
   ];
   final List tabBodies =[
     HomePage(),
-    CategoryPage(),
-    CartPage(),
+    ExplorePage(),
+    VideoPage(),
     MemberPage()
   ];
   int currentIndex = 0;
