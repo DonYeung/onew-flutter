@@ -71,11 +71,10 @@ class DialogUtil extends Dialog {
                   ),
 
                   new Container(
-                      child: new Align(
-                          alignment: FractionalOffset.bottomRight,
-//                          child: new Padding(
-//                            padding: const EdgeInsets.fromLTRB(220, 10, 25, 10),
-
+                      child: new Padding(
+                          padding: const EdgeInsets.fromLTRB(220, 10, 25, 10),
+                          child: new Align(
+                            alignment: FractionalOffset.bottomRight,
                             child: new Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: <Widget>[
@@ -113,9 +112,7 @@ class DialogUtil extends Dialog {
                                 )
                               ],
                             ),
-//                          )
-                      )
-                  ),
+                          ))),
 
 //                      ],
 //                    ),

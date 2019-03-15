@@ -7,7 +7,6 @@ import 'package:onewflutter/model/tree_entity.dart';
 import 'package:onewflutter/pages/home/bannerview.dart';
 import 'package:onewflutter/pages/webview_page.dart';
 import 'package:onewflutter/utils/DialogUtil.dart';
-import 'package:onewflutter/utils/LoadingDialog.dart';
 import 'package:onewflutter/utils/logutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -92,32 +91,12 @@ class _HomePageState extends State<HomePage>
                     duration: Duration(milliseconds: 200), curve: Curves.ease);
 //                showAlertDialog(context);
 
-                showdialog(context);
+                showAlertDialog(context);
               },
               child: Icon(Icons.arrow_upward),
             ),
       );
     }
-  }
-
-  void showdialog(BuildContext context) {
-    showDialog(
-        context: context, //BuildContext对象
-        barrierDismissible: false,
-        builder: (BuildContext context) {
-          return new DialogUtil(
-            title: "帮助",
-            message: "当前应用缺少必要的电话、存储空间、位置信息以及相机的权限。请点击设置按钮-权限，打开所需权限",
-            negativeText: "取消",
-            positiveText: "设置",
-            onCloseEvent: (() {
-              Navigator.pop(context);// Dismiss the dialog
-            }),
-            onPositivePressEvent:(() {
-              opensetting();
-            }),
-          );
-        });
   }
 
   ListView buildListView() {
@@ -290,51 +269,23 @@ class _HomePageState extends State<HomePage>
 
 
   void showAlertDialog(BuildContext context) {
-//    NavigatorState navigator= context.rootAncestorStateOfType(const TypeMatcher<NavigatorState>());
-//    debugPrint("navigator is null?"+(navigator==null).toString());
-//
-//
-//    showDialog(
-//        context: context,
-//        builder: (_) => new AlertDialog(
-//            title: new Text("帮助2"),
-//            content: new Text("当前应用缺少必要的电话、存储空间、位置信息以及相机的权限。请点击设置按钮-权限，打开所需权限"),
-//            actions:<Widget>[
-//              new FlatButton(child:new Text("取消"), onPressed: (){
-//                Navigator.of(context).pop();
-//
-//              },),
-//              new FlatButton(child:new Text("设置"), onPressed: (){
-//                opensetting();
-//
-//              },)
-//            ]
-//        ));
-//    var dialog = LoadingDialog(
-//      title: "帮助",
-//      message: "当前应用缺少必要的电话、存储空间、位置信息以及相机的权限。请点击设置按钮-权限，打开所需权限",
-//      negativeText: "取消",
-//      positiveText: "设置",
-//      cancelListener: (context) {
-//        // Dismiss the dialog
-//
-//        Navigator.pop(context);
-//
-//      },
-//      oklListener: (context){
-//        opensetting();
-//      },
-//    );
-//
-//    showDialog(
-//        context: context,
-//        barrierDismissible: false,
-//        builder: (context) => dialog
-//    );
-
-//    DialogUtil("帮助", "当前应用缺少必要的电话、存储空间、位置信息以及相机的权限。请点击设置按钮-权限，打开所需权限",
-//        "取消", "设置",  null, opensetting);
-
+    showDialog(
+        context: context, //BuildContext对象
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return new DialogUtil(
+            title: "帮助",
+            message: "当前应用缺少必要的电话、存储空间、位置信息以及相机的权限。请点击设置按钮-权限，打开所需权限",
+            negativeText: "取消",
+            positiveText: "设置",
+            onCloseEvent: (() {
+              Navigator.pop(context);// Dismiss the dialog
+            }),
+            onPositivePressEvent:(() {
+              opensetting();
+            }),
+          );
+        });
 
   }
 
